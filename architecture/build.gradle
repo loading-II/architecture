@@ -42,7 +42,7 @@ android {
 dependencies {
 
     //依赖基础配置
-    dependencies_base.each { k, v -> api(v) }
+    dependencies_base.each { k, v -> implementation(v) }
 
     //lifecycle
     dependencies_kapt_lifecycle.each { k, v -> kapt(v) }
