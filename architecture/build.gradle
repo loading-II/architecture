@@ -40,14 +40,18 @@ android {
 }
 
 dependencies {
+    implementation("androidx.core:core-ktx:1.7.0")
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("androidx.multidex:multidex:2.0.0")
 
-    //依赖基础配置
-    dependencies_base.each { k, v -> implementation(v) }
-
-    //lifecycle
-    dependencies_kapt_lifecycle.each { k, v -> kapt(v) }
-    dependencies_lifecycle.each { k, v -> api(v) }
-
+    def lifecycle_version = '2.4.1'
+    kapt("androidx.lifecycle:lifecycle-compiler:${lifecycle_version}")
+    api("androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycle_version}")
+    api("androidx.lifecycle:lifecycle-livedata-ktx:${lifecycle_version}")
+    api("androidx.lifecycle:lifecycle-runtime-ktx:${lifecycle_version}")
+    api("androidx.lifecycle:lifecycle-viewmodel-savedstate:${lifecycle_version}")
+    api("androidx.lifecycle:lifecycle-viewmodel-compose:${lifecycle_version}")
+    api("androidx.lifecycle:lifecycle-common-java8:${lifecycle_version}")
 
 
 }
