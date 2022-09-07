@@ -108,6 +108,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //implementation project(path: ':architecture')
-    implementation 'com.github.loading-II:architecture:v0.0.3'
+    implementation 'com.github.loading-II:architecture:v0.0.4'
 }
 
