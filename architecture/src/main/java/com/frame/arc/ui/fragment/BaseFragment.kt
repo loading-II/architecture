@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.alibaba.android.arouter.launcher.ARouter
 import com.frame.arc.BaseApp
 import com.frame.arc.callback.Presenter
 import kotlinx.coroutines.CoroutineScope
@@ -26,6 +27,7 @@ abstract class BaseFragment : Fragment(), Presenter.SimplePresenter {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ARouter.getInstance().inject(this)
         mActivity = requireActivity()
         arguments?.let {
             initArgs(it)
