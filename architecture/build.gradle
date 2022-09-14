@@ -53,5 +53,10 @@ dependencies {
     api("androidx.lifecycle:lifecycle-viewmodel-compose:${lifecycle_version}")
     api("androidx.lifecycle:lifecycle-common-java8:${lifecycle_version}")
 
+    def arouter_version = '1.5.2'
+    kapt("com.alibaba:arouter-compiler:${arouter_version}")
+    api("com.alibaba:arouter-api:${arouter_version}")
+
+
 
 }
