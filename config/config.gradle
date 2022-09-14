@@ -18,6 +18,7 @@ ext {
             constraintlayout_version  : "2.1.4",
             multidex_version          : "2.0.1",
             lifecycle_version         : "2.4.1",
+            arouter_version           : "1.5.2",
     ]
 
     /*最基础的一些依赖包*/
@@ -42,6 +43,13 @@ ext {
             lifecycle_common_java8        : "androidx.lifecycle:lifecycle-common-java8:${version.lifecycle_version}",
     ]
 
+    /*arouter 更多资料，请参考：https://github.com/alibaba/ARouter/blob/master/README_CN.md */
+    dependencies_kapt_arouter = [
+            arouter_compiler: "com.alibaba:arouter-compiler:$version.arouter_version"
+    ]
+    dependencies_arouter = [
+            arouter_api: "com.alibaba:arouter-api:$version.arouter_version",
+    ]
 
 
 

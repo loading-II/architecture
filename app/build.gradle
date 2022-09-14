@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-android'
+    id 'com.alibaba.arouter'
 }
 
 android {
@@ -15,13 +16,12 @@ android {
         targetSdk rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
-        multiDexEnabled true
         kapt {
             arguments {
                 arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
@@ -107,7 +107,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    //implementation project(path: ':architecture')
-    implementation 'com.github.loading-II:architecture:v0.0.4'
+    /*about-arouter*/
+    dependencies_kapt_arouter.each { k, v -> kapt(v) }
+    implementation project(path: ':architecture')
+    //implementation 'com.github.loading-II:architecture:v0.0.4'
 }
 
