@@ -10,6 +10,7 @@ import androidx.databinding.ViewDataBinding
 open abstract class BaseViewDataBindingFragment<VB : ViewDataBinding> constructor(private val layoutID: Int) : BaseFragment() {
 
     private lateinit var mViewDataBinding: VB
+    protected fun getViewDataBinding() = mViewDataBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         //return super.onCreateView(inflater, container, savedInstanceState)
@@ -22,10 +23,6 @@ open abstract class BaseViewDataBindingFragment<VB : ViewDataBinding> constructo
         super.onViewCreated(view, savedInstanceState)
         onListener()
         onLoadData()
-    }
-
-    fun getViewDataBinding(): VB {
-        return mViewDataBinding
     }
 
     protected abstract fun onListener()

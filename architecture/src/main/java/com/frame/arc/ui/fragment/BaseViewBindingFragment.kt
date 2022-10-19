@@ -9,11 +9,12 @@ import androidx.viewbinding.ViewBinding
 open abstract class BaseViewBindingFragment<D : ViewBinding> : BaseFragment() {
 
     protected lateinit var mViewBinding: D
-    protected abstract fun getViewBinding(): D
+    protected abstract fun onViewBinding(): D
+    protected fun getViewBinding() = mViewBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        mViewBinding = getViewBinding()
+        mViewBinding = onViewBinding()
         return mViewBinding.root
     }
 

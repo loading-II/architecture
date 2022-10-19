@@ -109,7 +109,7 @@ dependencies {
 
     /*about-arouter*/
     dependencies_kapt_arouter.each { k, v -> kapt(v) }
-//    implementation project(path: ':architecture')
-    implementation 'com.github.loading-II:architecture:v0.0.5'
+    implementation project(path: ':architecture')
+//    implementation 'com.github.loading-II:architecture:v0.0.5'
 }
 
