@@ -17,13 +17,12 @@ abstract class BaseViewBindingActivity<D : ViewBinding> : BaseActivity() {
         supportActionBar?.hide()
         mViewBinding = onViewBinding()
         setContentView(mViewBinding.root)
-        Looper.myQueue().addIdleHandler {
-            onListener()
-            onLoadData(savedInstanceState)
-            false
-        }
+        /*Looper.myQueue().addIdleHandler {*/
+        onListener()
+        onLoadData(savedInstanceState)
+        /*false
+    }*/
     }
-
 
 
 }

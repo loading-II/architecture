@@ -13,11 +13,11 @@ open abstract class BaseViewDataBindingActivity<VB : ViewDataBinding> constructo
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindView()
-        Looper.myQueue().addIdleHandler {
-            onListener()
-            onLoadData(savedInstanceState)
-            false
-        }
+        /*Looper.myQueue().addIdleHandler {*/
+        onListener()
+        onLoadData(savedInstanceState)
+        /*false
+    }*/
     }
 
     private fun bindView() {
@@ -29,6 +29,7 @@ open abstract class BaseViewDataBindingActivity<VB : ViewDataBinding> constructo
     protected fun getViewDataBinding(): VB {
         return mViewDataBinding
     }
+
     protected abstract fun onListener()
     protected abstract fun onLoadData(savedInstanceState: Bundle?)
 
